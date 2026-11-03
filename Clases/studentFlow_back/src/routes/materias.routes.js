@@ -9,13 +9,15 @@ import {
     updateMateria,
     deleteMateria,
     listTareasByMateria,
-    listEventosByMateria
+    listEventosByMateria,
+    getEstadisticasByMateria
 
 } from "../controllers/materias.controller.js"
 
 const router = Router();
 
 router.get("/", listMaterias);
+router.get("/:id/estadisticas", getEstadisticasByMateria);
 router.get("/:id/tareas", listTareasByMateria);
 router.get("/:id", getMateria);
 router.post("/", createMateria);
