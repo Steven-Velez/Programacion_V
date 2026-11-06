@@ -108,17 +108,3 @@ export async function listEventosByMateria(request, response, next) {
     return next(error);
   }
 }
-
-export async function getEstadisticasByMateria(request, response, next) {
-  try {
-    const id = validateMateriaId(request.params.id);
-    const estadisticas = await materiasService.getEstadisticasByMateria(
-      id,
-      request.user.id
-    );
-
-    return sendSuccess(response, estadisticas);
-  } catch (error) {
-    return next(error);
-  }
-}

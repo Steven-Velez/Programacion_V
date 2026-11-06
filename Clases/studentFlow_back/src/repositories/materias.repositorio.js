@@ -265,25 +265,3 @@ export async function findEventosByMateriaAndUserId(id, userId) {
 
     return rows;
 }
-
-export async function findEstadisticasByMateriaAndUserId(id, userId) {
-    const [rows] = await pool.execute(
-        `SELECT
-       m.id_materia AS materiaId,
-       (SELECT COUNT(*) FROM tarea t WHERE t.id_materia = m.id_materia) AS totalTareas,
-       (SELECT COUNT(*) FROM evento e WHERE e.id_materia = m.id_materia) AS totalEventos
-     FROM materia m
-     WHERE m.id_materia = ? AND m.id_usuario = ?`,
-        [id, userId]
-    );
-
-    if (!rows[0]) {
-        return null;
-    }
-
-    return {
-        materiaId: rows[0].materiaId,
-        totalTareas: Number(rows[0].totalTareas),
-        totalEventos: Number(rows[0].totalEventos)
-    };
-}
