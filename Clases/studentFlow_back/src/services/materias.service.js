@@ -96,3 +96,16 @@ export async function listEventosByMateria(id, userId) {
     // Llama a la función de la capa de datos (repositorio)
     return materiasRepository.findEventosByMateriaAndUserId(id, userId);
 }
+
+export async function getEstadisticasByMateria(id, userId) {
+    const estadisticas = await materiasRepository.findEstadisticasByMateriaAndUserId(
+        id,
+        userId
+    );
+
+    if (!estadisticas) {
+        throw new HttpError(404, "MATERIA_NOT_FOUND", "la materia no fue encontrada");
+    }
+
+    return estadisticas;
+}
