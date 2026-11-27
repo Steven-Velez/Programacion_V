@@ -13,8 +13,12 @@ button, input, select { font: inherit; }
 .card-header { padding: 12px 20px; background: #f7f7f7; border-bottom: 1px solid #d6d6d6; }
 h1 { margin: 0; font-size: 16px; font-weight: 700; line-height: 24px; }
 .card-body { padding: 20px 35px 22px; }
+.resource-tabs { display: flex; gap: 8px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
+.resource-tabs button { padding: 9px 14px; color: #435064; background: transparent; border: 0; border-bottom: 2px solid transparent; cursor: pointer; }
+.resource-tabs button[aria-pressed="true"] { color: #20598f; border-bottom-color: #2869ad; font-weight: 700; }
 .toolbar, .table-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .toolbar { margin-bottom: 14px; }
+.primary-button { min-height: 36px; padding: 7px 16px; color: #fff; background: #2869ad; border: 1px solid #20598f; border-radius: 4px; font-weight: 600; cursor: pointer; }
 .toolbar label { display: flex; align-items: center; gap: 5px; }
 .toolbar .search { gap: 8px; }
 select, input { height: 32px; color: #435064; background: #fff; border: 1px solid #cbd3df; border-radius: 3px; }
@@ -52,6 +56,7 @@ td.empty { text-align: center; padding: 28px 12px; }
   body { padding: 12px; }
   .card-body { padding: 18px 16px; }
   .toolbar, .table-footer { flex-wrap: wrap; }
+  .resource-tabs { overflow-x: auto; }
   .table-footer { gap: 12px; margin-top: 14px; }
   .pagination { flex-wrap: wrap; }
 }

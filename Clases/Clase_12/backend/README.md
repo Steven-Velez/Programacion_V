@@ -28,7 +28,7 @@ El frontend está en `../front` y el mismo backend lo sirve como contenido está
 http://localhost:3000
 ```
 
-La tabla consulta `GET /api/v1/ciudades` mediante JavaScript e incluye búsqueda, ordenación, selector de registros y paginación.
+La interfaz permite adicionar, modificar y borrar ciudades, clientes y oficinas mediante las rutas de la API. Para crear o modificar un cliente se debe seleccionar una ciudad existente. El borrado de ciudades, clientes y oficinas puede rechazarse si hay registros relacionados.
 
 ## Endpoints disponibles
 
